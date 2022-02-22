@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
 
-import { CARDWIDTH, CARDBORDER, CARDCOUNTER } from "./cardConst";
+import { CARDWIDTH, CARDBORDER, CARDCOUNTER, ANGLE, RADIUS } from "./cardConst";
 
 const ArrowsContainer = styled.div`
   position: absolute;
@@ -11,10 +11,10 @@ const ArrowsContainer = styled.div`
   width: ${CARDWIDTH}px;
   height: 50px;
 
-  display: flex;
-  justify-content: space-between:
-  align-items: center;
-  flex-direction: row;
+  // display: flex;
+  // justify-content: space-between:
+  // align-items: center;
+  // flex-direction: row;
 `;
 
 const ButtonArrow = styled.button`
@@ -36,36 +36,57 @@ const ButtonArrow = styled.button`
 const Arrows = (props) => {
   const moveLeft = () => {
     if (props.cardCenter > 0) {
-      var newPosAll = [];
-      var i;
-      for (i = 0; i < CARDCOUNTER; i++) {
-        var newPos = {};
-        newPos["width"] =
-          props.cardPos[i]["width"] + (CARDWIDTH + CARDWIDTH / 5);
-        newPos["height"] = props.cardPos[i]["height"];
-        newPosAll.push(newPos);
-      }
-
-      props.setCardPos(newPosAll);
       props.setCardCenter((cardCenter) => cardCenter - 1);
     }
+    //   var newPosAll = [];
+    //   var i;
+    //   for (i = 0; i < CARDCOUNTER; i++) {
+    //     var newPos = {};
+    //     newPos["width"] =
+    //       window.innerWidth / 2 -
+    //       CARDWIDTH / 2 -
+    //       RADIUS *
+    //         Math.cos(Math.PI / 2 + (Math.PI * (i + 1 - props.cardCenter)) / 15);
+    //     newPos["height"] =
+    //       window.innerHeight / 4 +
+    //       RADIUS -
+    //       RADIUS *
+    //         Math.sin(Math.PI / 2 + ((i + 1 - props.cardCenter) * Math.PI) / 15);
+    //     //console.log(i - props.cardCenter);
+    //     newPos["angle"] = props.cardPos[i]["angle"] + (Math.PI / ANGLE) * 180;
+    //     newPosAll.push(newPos);
+    //   }
+
+    //   props.setCardPos(newPosAll);
+    // }
   };
 
   const moveRight = () => {
     if (props.cardCenter < CARDCOUNTER - 1) {
       props.setCardCenter((cardCenter) => cardCenter + 1);
-      var newPosAll = [];
-      var i;
-      for (i = 0; i < CARDCOUNTER; i++) {
-        var newPos = {};
-        newPos["width"] =
-          props.cardPos[i]["width"] - (CARDWIDTH + CARDWIDTH / 5);
-        newPos["height"] = props.cardPos[i]["height"];
-        newPosAll.push(newPos);
-      }
-
-      props.setCardPos(newPosAll);
     }
+    //   var newPosAll = [];
+    //   var i;
+    //   for (i = 0; i < CARDCOUNTER; i++) {
+    //     var newPos = {};
+    //     newPos["width"] =
+    //       window.innerWidth / 2 -
+    //       CARDWIDTH / 2 -
+    //       RADIUS *
+    //         Math.cos(Math.PI / 2 + (Math.PI * (i - 1 - props.cardCenter)) / 15);
+    //     newPos["height"] =
+    //       window.innerHeight / 4 +
+    //       RADIUS -
+    //       RADIUS *
+    //         Math.sin(Math.PI / 2 + ((i - 1 - props.cardCenter) * Math.PI) / 15);
+
+    //     //console.log(newPos["angle"], newPos["angle"] + (Math.PI / ANGLE) * 180);
+    //     newPos["angle"] = props.cardPos[i]["angle"] - (Math.PI / ANGLE) * 180;
+    //     newPosAll.push(newPos);
+    //   }
+
+    //   props.setCardPos(newPosAll);
+    // }
   };
 
   return (

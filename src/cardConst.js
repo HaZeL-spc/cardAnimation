@@ -5,6 +5,7 @@ const CARDCOUNTER = 8;
 const INCREASMENT = 20;
 const RADIUS = 2000;
 const ANGLE = 50;
+const ICONSIZE = 130;
 
 export {
   CARDHEIGHT,
@@ -14,4 +15,5 @@ export {
   INCREASMENT,
   RADIUS,
   ANGLE,
+  ICONSIZE,
 };

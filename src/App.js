@@ -1,14 +1,7 @@
 import "./App.css";
 import { ThemeProvider } from "styled-components";
 import { useEffect, useState, useLayoutEffect } from "react";
-import {
-  CARDHEIGHT,
-  CARDWIDTH,
-  INCREASMENT,
-  CARDCOUNTER,
-  RADIUS,
-  ANGLE,
-} from "./cardConst";
+import { CARDWIDTH, CARDCOUNTER, RADIUS, ANGLE } from "./cardConst";
 import Card from "./Card";
 import Arrows from "./Arrows";
 
